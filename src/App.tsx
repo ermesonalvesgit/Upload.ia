@@ -10,6 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@radix-ui/react-select";
+import { Slider } from "@radix-ui/react-slider";
 
 function App() {
   return (
@@ -102,7 +103,23 @@ function App() {
                   <SelectItem value="gpt3.5">GPT 3.5-turbo 16K</SelectItem>
                 </SelectContent>
               </Select>
+              <p className="block text-xs text-zinc-400 italic">
+                Você poderá customizar essa opção em breve
+              </p>
             </div>
+
+            <Separator />
+
+            <div className="space-y-4">
+              <Label>Temperatura</Label>
+              <Slider min={0} max={1} step={0.1} defaultValue={[0.5]} />
+              <p className="block text-xs text-zinc-400 italic">
+                Valores mais altos tendem a deixar o resultado mais criativo e
+                com possiveis erros.
+              </p>
+            </div>
+
+            <Separator />
           </form>
         </aside>
       </div>
