@@ -3,6 +3,13 @@ import { Button } from "./components/ui/button";
 import { Separator } from "@radix-ui/react-separator";
 import { Textarea } from "./components/ui/textarea";
 import { Label } from "@radix-ui/react-label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@radix-ui/react-select";
 
 function App() {
   return (
@@ -84,8 +91,17 @@ function App() {
           <Separator />
 
           <form className="space-y-6">
-            <div className="spacey-y-2">
+            <div className="space-y-2">
               <Label>Modelo</Label>
+              <Select disabled defaultValue="gpt3.5">
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+
+                <SelectContent>
+                  <SelectItem value="gpt3.5">GPT 3.5-turbo 16K</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
           </form>
         </aside>
