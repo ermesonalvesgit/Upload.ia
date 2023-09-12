@@ -1,4 +1,4 @@
-import { FileVideo, Github, Upload } from "lucide-react";
+import { FileVideo, Github, Upload, Wand2 } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Separator } from "@radix-ui/react-separator";
 import { Textarea } from "./components/ui/textarea";
@@ -91,7 +91,24 @@ function App() {
 
           <Separator />
 
-          <form className="space-y-6">
+          <form className="space-y-4">
+          <div className="space-y-2">
+              <Label>Prompt</Label>
+              <Select>
+                <SelectTrigger>
+                  <SelectValue placeholder="Selecione um prompt"/>
+                </SelectTrigger>
+
+                <SelectContent>
+                  <SelectItem value="title">Titúlo do YouTube</SelectItem>
+                  <SelectItem value="description">Descrição doYouTube</SelectItem>
+                </SelectContent>
+              </Select>
+              <p className="block text-xs text-zinc-400 italic">
+                Você poderá customizar essa opção em breve
+              </p>
+            </div>
+
             <div className="space-y-2">
               <Label>Modelo</Label>
               <Select disabled defaultValue="gpt3.5">
@@ -110,7 +127,7 @@ function App() {
 
             <Separator />
 
-            <div className="space-y-4">
+            <div className="space-y-2">
               <Label>Temperatura</Label>
               <Slider min={0} max={1} step={0.1} defaultValue={[0.5]} />
               <p className="block text-xs text-zinc-400 italic">
@@ -120,6 +137,11 @@ function App() {
             </div>
 
             <Separator />
+
+            <Button type="submit" className="w-full">
+              Executar
+              <Wand2 className="h-4 w-4 ml-2" />
+            </Button>
           </form>
         </aside>
       </div>
